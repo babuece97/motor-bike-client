@@ -14,16 +14,19 @@ const Items = () => {
            // console.log( 'Im here', items);
     }, [])
     return ( 
-        <div>    
+        <div className='container px-8 mx-auto'>
+        <h2 className='text-5xl text-center my-8 font-bold text-orange-600'>New Arrivals In Our Showroom</h2>
+         <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-4">  
             {
-                products.map(unit => <Item 
+                products.slice(0,6).map(unit => <Item 
                 key={unit.id}
                 unit={unit} 
                 >
                 </Item>)
                 // after fetching data from fakedata.json, keep those at ARRAY named "products"
-                //. Executing the MAP operation on this array , getting a new elements named "unit"  and all "unit" should goes into "Item " component.
+                //. Executing the MAP operation on this array , getting  new elements named "unit"  and all "unit" should goes into "Item " component.
             }  
+            </div>
         </div>
     );
 };

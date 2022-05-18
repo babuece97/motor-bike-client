@@ -1,15 +1,14 @@
 import React from 'react';
-
-const Item = ({unit}) => {
-    const {name, picture, description}=unit;
+ //DESTRUCTING
+//const Item = ({unit}) => {  
+//const {name, picture, description}=unit;
+const Item = (props) => {
+ const { picture, name, description} = props.unit;
     return (
-        //Destructing
         <div>
             <img src={picture} alt=""/>
-            <h5>{name}</h5>
-            <h2>{description}</h2>
-            
-
+            <h1>{name}</h1>
+            <h3>{description}</h3>
         </div>
     );
 };

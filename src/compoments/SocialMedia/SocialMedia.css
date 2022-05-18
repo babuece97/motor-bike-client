@@ -1,0 +1,27 @@
+h1,h2{
+    color:rgb(6, 3, 22);
+    font-size: large;
+}
+.statusBar {
+    /* border: 2px solid; */
+    margin-top: 5px;
+    padding: 1%;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-color:rgb(240, 240, 195);
+  }
+  .mission-header {
+    margin-top: 3px;
+  }
+  .statusMain {
+    display: flex;
+    justify-content: space-between;
+  }
+  .link-button {
+    text-decoration: none;
+    background-image: linear-gradient(orange, rgb(52, 99, 52));
+    color: white;
+    font-weight: 700;
+    padding: 12px 42px;
+    border-radius: 10px;
+  }
