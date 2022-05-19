@@ -10,8 +10,7 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <div>
-      <nav className="flex items-center place-content-between bg-orange-400 px-16">
-        <div className="invisible md:visible lg:visible">
+      <nav className="flex items-center place-content-between bg-green-400 px-16"> <div className="invisible md:visible lg:visible">
           <Link to="/">
             <img className="h-16 w-16 rounded-full " src={Logo} alt="" />
           </Link>
