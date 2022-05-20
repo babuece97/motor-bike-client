@@ -15,7 +15,7 @@ const Items = () => {
     }, [])
     return ( 
         <div className='container px-8 mx-auto'>
-        <h2 className='text-5xl text-center my-8 font-bold text-orange-600'>New Arrivals In Our Showroom</h2>
+        <h2 className='text-5xl text-center my-8 font-bold text-orange-600'>New Summer Offer In Our Showroom</h2>
          <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-4">  
             {
                 products.slice(0,6).map(unit => <Item 

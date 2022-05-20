@@ -6,10 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 
  //DESTRUCTING
 const Item = ({unit}) => {  
-const {name, picture, description,id}=unit;
+const {name,quantity,price, picture,supplier, description,id}=unit;
 //const Item = ({item, setIsReload, isReload}) => {
   //  const { picture, name, description,id} = props.unit;
-  const navigate = useNavigate()
+  const navigate = useNavigate()// Explain
 const handleItemDetails =(id)=>{
     navigate(`/itemdetails/${id}`)
    }
@@ -18,9 +18,13 @@ const handleItemDetails =(id)=>{
     return (
         <div className="item">
             <img src={picture} alt=""/>
-            <h4> Name {name}</h4>
-            <h1>{description}</h1>
-            <h5>Product ID {id}</h5>
+            <p class="text-2xl">Name {name}</p>
+            <p class="text-2xl">Product ID {id}</p>
+            <p class="text-2xl">Brand {supplier}</p>
+            <p class="text-2xl">In stock {quantity}</p>
+            <p class="text-2xl">Price {price} $</p>
+            <p>{description}</p>
+            
             <Link to="/detail">
             <button onClick={()=>handleItemDetails(id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 my-2 px-4 rounded">
             Details
