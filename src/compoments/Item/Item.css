@@ -1,0 +1,13 @@
+
+
+.item {
+    background-color: hsl(6, 7%, 73%);
+    box-shadow: 0 4px 8px 0 rgb(20, 141, 223);
+    border-radius: 20px;
+    padding: 20px; 
+    margin: 10px;
+    }
+
+    .btn-btn-primany{
+        color:rgb(12, 46, 240);
+    }

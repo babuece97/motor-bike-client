@@ -16,8 +16,6 @@ function App() {
        <Routes>
          {/* This place is being routed, with out routing it does not work . ONLY it could be worked if you write on  browser*/}
           <Route path="/" element={<Home></Home>}/>
-          <Route path="home" element={<Home></Home>} />
-          {/* <Route path="items" element={<Items></Items>}/> */}
           <Route path="blog" element={<Blog> </Blog>}/>
           <Route path="aboutMe" element={<About></About>} />
           <Route path="registration" element={<Registration> </Registration> } />
