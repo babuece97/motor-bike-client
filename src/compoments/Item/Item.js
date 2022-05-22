@@ -25,9 +25,9 @@ const handleItemDetail =(id)=>{
             <p class="text-2xl">Price {price} $</p>
             <p>{description}</p>
             
-            <Link to="/itemDetail">
+            <Link to="/inventory">
             <button onClick={()=>handleItemDetail(id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 my-2 px-4 rounded">
-            Details
+            Update
            </button>
            {/* Update
            

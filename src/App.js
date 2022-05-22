@@ -8,8 +8,10 @@ import Blog from './compoments/Blog/Blog';
 import Login from './compoments/Login/Login';
 import NotFound from './compoments/NotFound/NotFound';
 import Home from './compoments/Home/Home';
-import ItemDetail from './compoments/ItemDetail/ItemDetail';
+import UpdateItem from './compoments/UpdateItem/UpdateItem';
 import PrivateRoute from './compoments/Authentication/PrivateRoute';
+import Review from './compoments/Review/Review';
+import BankLoan from './compoments/BankLoan/BankLoan';
 
 function App() {
   return (
@@ -19,10 +21,12 @@ function App() {
          {/* This place is being routed, with out routing it does not work . ONLY it could be worked if you write on  browser*/}
           <Route path="/" element={<Home></Home>}/>
           <Route path="blog" element={<Blog> </Blog>}/>
+          <Route path="review" element={<Review> </Review>}/>
+          <Route path="bankloan" element={<BankLoan></BankLoan>}/>
           <Route path="aboutMe" element={<About></About>} />
           <Route path="registration" element={<Registration> </Registration> } />
           <Route path="login" element={<Login></Login>} />
-          <Route path="itemDetail" element={<PrivateRoute> <ItemDetail/> </PrivateRoute>} />
+          <Route path="inventory" element={<PrivateRoute> <UpdateItem/> </PrivateRoute>} />
           <Route path="*" element={<NotFound></NotFound>} />
         </Routes>
 
