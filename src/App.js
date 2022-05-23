@@ -12,6 +12,10 @@ import UpdateItem from './compoments/UpdateItem/UpdateItem';
 import PrivateRoute from './compoments/Authentication/PrivateRoute';
 import Review from './compoments/Review/Review';
 import BankLoan from './compoments/BankLoan/BankLoan';
+import app from './compoments/Firebase/firebase.init';
+import {getAuth} from 'firebase/auth';
+const auth =getAuth(app);
+// Two things here app and getAuth for registration process.getAuth comes from FB auth,then pass app inside the getAuth
 
 function App() {
   return (
