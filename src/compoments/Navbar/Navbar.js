@@ -1,13 +1,36 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../images/logo.png";
-// import { signOut } from "firebase/auth";
-// import { useAuthState } from "react-firebase-hooks/auth";
-// import auth from "../../ firebase.init"
-//import CustomLink from "../CustomLink/CustomLink";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../Firebase/firebase.init";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [user, setUser] = useState({});//as User comes from OBj
+  console.log(user);
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        //console.log(user); // to CHK the use whether it's persists or NOT
+        setUser(user);
+      } else {
+        setUser({});// Aft signout, make it empty object
+      }
+    });
+  },[])
+
+  const handleLogOut=()=>{
+    signOut(auth)
+      .then(() => {
+      
+    })
+    .catch((error) => {
+      
+    });
+  }
+ 
+  
+  
   return (
     <div>
       <nav className="flex items-center place-content-between bg-green-400 px-16"> <div className="invisible md:visible lg:visible">
@@ -32,13 +55,26 @@ const Navbar = () => {
           <Link className="mr-6 font-medium text-black" to="/aboutMe">
             ABOUT ME
           </Link>
+          {user?.uid?
+          <>
+          <Link className="mr-6 font-medium text-black" to="/manageitems">
+            MANAGE  ITEMS
+          </Link>
+          <Link className="mr-6 font-medium text-black" to="/myitems">
+            MY  ITEMS
+          </Link>
+         
+          <button onClick={handleLogOut} className="mr-6 font-medium text-white" > LOG OUT</button></> : 
+          
           <Link className="mr-6 font-medium text-black" to="/login">
             LOGIN
-          </Link>
+          </Link>}
+          {/* <p>USER:{user?.displayName}</p>
+          <p>Email:{user?.email}</p> */}
+
           
-          {/* <Link className="mr-6 font-medium text-white" to="/aboujhjhj">
-            ja khochi
-          </Link> */}
+          
+
         </div>
       </nav>
     </div>
