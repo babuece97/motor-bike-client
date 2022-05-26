@@ -12,6 +12,8 @@ import UpdateItem from './compoments/UpdateItem/UpdateItem';
 import PrivateRoute from './compoments/Authentication/PrivateRoute';
 import Review from './compoments/Review/Review';
 import BankLoan from './compoments/BankLoan/BankLoan';
+import MyItems from './compoments/MyItems/MyItems.js';
+import ManageItems from './compoments/ManageItems/ManageItems';
 import app from './compoments/Firebase/firebase.init';
 import {getAuth} from 'firebase/auth';
 const auth =getAuth(app);
@@ -28,6 +30,8 @@ function App() {
           <Route path="review" element={<Review> </Review>}/>
           <Route path="bankloan" element={<BankLoan></BankLoan>}/>
           <Route path="aboutMe" element={<About></About>} />
+          <Route path="manageitems" element={<ManageItems></ManageItems>} />
+          <Route path="myitems" element={<MyItems></MyItems>} />
           <Route path="registration" element={<Registration> </Registration> } />
           <Route path="login" element={<Login></Login>} />
           <Route path="inventory" element={<PrivateRoute> <UpdateItem/> </PrivateRoute>} />

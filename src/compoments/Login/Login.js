@@ -9,10 +9,14 @@ import toast from "react-hot-toast";
 
 const provider = new GoogleAuthProvider();
 
+
 const Login = () => {
   const navigate = useNavigate();
+  // const location =useLocation();//from same plACE
+  // const from =location.state?.from?.pathname || '/'; //from same plACE
   const [email, setEmail] = useState({ value: "", error: "" });
   const [password, setPassword] = useState({ value: "", error: "" });
+  
 
   const googleAuth = () => {
     signInWithPopup(auth, provider)
@@ -50,6 +54,10 @@ const Login = () => {
         console.log('email sent for reset pwd')
       })
   }
+//   const user= true;
+//   if (user) {
+//     navigate(from, {replace: true});
+// }
 
   const handleLogin = (event) => {
     event.preventDefault();

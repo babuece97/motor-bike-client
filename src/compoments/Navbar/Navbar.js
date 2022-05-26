@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../images/logo.png";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import Home from '../Home/Home';
 import { auth } from "../Firebase/firebase.init";
 import "./Navbar.css";
 
@@ -49,13 +50,12 @@ const Navbar = () => {
           <Link className="mr-6 font-medium text-black" to="/review">
             REVIEW
           </Link>
-          <Link className="mr-6 font-medium text-black" to="/bankloan">
-            BANK LOAN
+          <Link className="mr-6 font-medium text-black" to="/bankloan"> BANK LOAN
           </Link>
           <Link className="mr-6 font-medium text-black" to="/aboutMe">
             ABOUT ME
           </Link>
-          {user?.uid?
+          {user?.uid? // Conditional rendering
           <>
           <Link className="mr-6 font-medium text-black" to="/manageitems">
             MANAGE  ITEMS
@@ -63,8 +63,13 @@ const Navbar = () => {
           <Link className="mr-6 font-medium text-black" to="/myitems">
             MY  ITEMS
           </Link>
+          <Link to='/' elemement={<Home />}>
+       <button onClick={handleLogOut}className='mr-6 font-medium text-white' > LOG OUT</button>
+       </Link>
          
-          <button onClick={handleLogOut} className="mr-6 font-medium text-white" > LOG OUT</button></> : 
+          {/* <button onClick={handleLogOut} as={Link} to="/" className="mr-6 font-medium text-white" > LOG OUT</button> */}
+          </> 
+          : 
           
           <Link className="mr-6 font-medium text-black" to="/login">
             LOGIN
