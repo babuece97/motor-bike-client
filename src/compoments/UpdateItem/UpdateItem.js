@@ -5,7 +5,8 @@ import ManageItems from '../ManageItems/ManageItems';
 
 const ItemDetail = () => {
     const [item, setitem] = useState({})
-    const {itemid} = useParams()
+    const {itemId} = useParams()
+    console.log(itemId)
    
     useEffect(()=>{
         // fetch(`https://limitless-caverns-64590.herokuapp.com/item/${itemid}`)
@@ -14,7 +15,7 @@ const ItemDetail = () => {
         .then(data=> setitem(data))
     },[])
 
-    console.log(item)
+    // console.log(item)
     return (
         <div className='w-96 mx-auto mt-16'>
             <div class="p-16 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">

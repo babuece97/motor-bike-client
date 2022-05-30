@@ -16,6 +16,7 @@ import MyItems from './compoments/MyItems/MyItems.js';
 import ManageItems from './compoments/ManageItems/ManageItems';
 import app from './compoments/Firebase/firebase.init';
 import {getAuth} from 'firebase/auth';
+import HappyCustomers from './compoments/HappyCustomers/HappyCustomers';
 const auth =getAuth(app);
 // Two things here app and getAuth for registration process.getAuth comes from FB auth,then pass app inside the getAuth
 
@@ -34,7 +35,12 @@ function App() {
           <Route path="myitems" element={<MyItems></MyItems>} />
           <Route path="registration" element={<Registration> </Registration> } />
           <Route path="login" element={<Login></Login>} />
-          <Route path="inventory" element={<PrivateRoute> <UpdateItem/> </PrivateRoute>} />
+          <Route path="/inventory/:itemId" element={<UpdateItem/>}/>
+          <Route path="/happyCustomers" element={<HappyCustomers/>}/>
+
+          
+
+          {/* <Route path="/inventory/:id" element={<PrivateRoute> <UpdateItem/> </PrivateRoute>} /> */}
           <Route path="*" element={<NotFound></NotFound>} />
         </Routes>
 

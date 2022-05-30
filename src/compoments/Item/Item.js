@@ -7,11 +7,15 @@ import { Link, useNavigate } from "react-router-dom";
  //DESTRUCTING
 const Item = ({unit}) => {  
 const {name,quantity,price, picture,supplier, description,id}=unit;
+console.log("itemid",id);
 //const Item = ({item, setIsReload, isReload}) => {
   //  const { picture, name, description,id} = props.unit;
   const navigate = useNavigate()// Explain
 const handleItemDetail =(id)=>{
-    navigate(`/itemDetail/${id}`)
+ // console.log("id chk", `/inventory/${id}`);
+
+    navigate(`inventory/${id}`)
+    // navigate("/happyCustomers");
    }
     
  
@@ -25,14 +29,14 @@ const handleItemDetail =(id)=>{
             <p class="text-2xl">Price {price} $</p>
             <p>{description}</p>
             
-            <Link to="/inventory">
+            {/* <Link to="/inventory"> */}
             <button onClick={()=>handleItemDetail(id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 my-2 px-4 rounded">
             Update
            </button>
            {/* Update
            
            <UpdateItem setIsReload={setIsReload} isReload={isReload} id={unit.id}/> */}
-        </Link>
+        {/* </Link> */}
         </div>
     );
 };
