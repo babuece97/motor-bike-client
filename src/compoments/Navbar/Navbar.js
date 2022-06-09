@@ -52,6 +52,9 @@ const Navbar = () => {
           </Link>
           <Link className="mr-6 font-medium text-black" to="/bankloan"> BANK LOAN
           </Link>
+          <Link className="mr-6 font-medium text-black" to="/addItems">
+            ADD ITEMS
+          </Link>
           <Link className="mr-6 font-medium text-black" to="/aboutMe">
             ABOUT ME
           </Link>

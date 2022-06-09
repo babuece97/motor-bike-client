@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
  //DESTRUCTING
 const Item = ({unit}) => {  
 const {name,quantity,price, picture,supplier, description,id}=unit;
-console.log("itemid",id);
+console.log("See id",id);
 //const Item = ({item, setIsReload, isReload}) => {
   //  const { picture, name, description,id} = props.unit;
   const navigate = useNavigate()// Explain
