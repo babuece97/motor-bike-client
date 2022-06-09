@@ -16,6 +16,8 @@ const AddItems = () => {
         .then(res=>res.json())
         .then(data=>{
           console.log('success houechy',data )
+          alert('Your desired product/s added Successfully');
+          event.target.reset();
         })
     }
 
