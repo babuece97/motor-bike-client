@@ -13,6 +13,26 @@ const Items = () => {
                  .then(data => setProducts(data))
                 // console.log( 'Im here', products);
          }, [])
+         const handleModuleDelete =_id=>{
+             const action =window.confirm('SURE , Wanna delete??');
+             if(action){
+                 console.log('DELETING MODULE bY iD', _id);
+                 const url = `http://localhost:5000/product/${_id}`;
+                 fetch(url,{
+                     method:'DELETE'
+                 })
+                 .then(res=>res.json())
+                 .then(data=>{
+                     if(data.deletedCount>0){
+                         console.log('SUCCESSFULLY MOCHE GELO');
+                         const remaining = products.filter(product=>product._id!==_id);
+                         setProducts(remaining);    
+                     }
+                 })
+
+             }
+
+         }
     
     // FROM PREVIOUS PROJECT
     // useEffect(() => { // This is HOOK ,inside the HOOK put two things calback fn or fn ,dependency list.IF dependency changes the 1st parameter or fn will be called 
@@ -26,7 +46,9 @@ const Items = () => {
             Total products:{products.length}
             <ul>
                 {
-                    products.map(product => <li>{product.name}:::{product.vendor} </li>)
+                    products.map(module => <li key={module._id}>{module.name}:::{module.vendor}
+                    <button  onClick={()=>handleModuleDelete(module._id)}type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Red</button>
+                     </li>)
                 }
             </ul>
         </div>
