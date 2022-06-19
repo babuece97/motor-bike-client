@@ -3,6 +3,7 @@ import Culture from '../Culture/Culture';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import Carusal from '../Banner/Banner';
 import Items from '../Items /Items';
+import UpdateItem from '../UpdateItem/UpdateItem';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Items></Items>
             <Culture></Culture>
             <SocialMedia></SocialMedia>
+            
         </div>
     );
 };

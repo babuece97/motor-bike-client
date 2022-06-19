@@ -37,13 +37,13 @@ function App() {
           <Route path="myitems" element={<MyItems></MyItems>} />
           <Route path="registration" element={<Registration> </Registration> } />
           <Route path="login" element={<Login></Login>} />
-          <Route path="/inventory/:itemId" element={<UpdateItem/>}/>
+          <Route path="/updateItem/:id" element={<UpdateItem/>}/>
           <Route path="/happyCustomers" element={<HappyCustomers/>}/>
 
           
 
           {/* <Route path="/inventory/:id" element={<PrivateRoute> <UpdateItem/> </PrivateRoute>} /> */}
-          <Route path="*" element={<NotFound></NotFound>} />
+          {/* <Route path="*" element={<NotFound></NotFound>} /> */}
         </Routes>
 
       <Footer></Footer>
