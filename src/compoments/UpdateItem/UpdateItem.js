@@ -17,4 +17,4 @@ const UpdateItem = () => {
   );
 };
 
-export default UpdateItem;
+export default UpdateItem; // update Product
